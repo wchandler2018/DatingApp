@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">Dating App</a>
+    <a class="navbar-brand" [routerLink]="['/home']"
+      >Next<span class="accent-text">Comes</span>Love</a
+    >
     <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/members']">Matches</a>
@@ -14,12 +16,11 @@
     </ul>
 
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
-      
       <a class=" dropdown-toggle text-light" dropdownToggle>
         Hello, {{ authService.decodedToken?.unique_name | titlecase }}
       </a>
       <span class="ml-2">
-        <img src="{{photoUrl}}" alt="" />
+        <img src="{{ photoUrl || '../../assets/user.png'}}" alt="" />
       </span>
 
       <div class="dropdown-menu mt-2" *dropdownMenu>
