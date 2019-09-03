@@ -1,7 +1,7 @@
 <div class="card mb-4">
   <div class="card-img-wrapper">
     <img
-      src="{{ user.photoUrl || '../../../assets/user.png'}}"
+      src="{{ user.photoUrl || '../../../assets/user.png' }}"
       alt="{{ user.knownAs }}"
       class="card-img-top"
     />
@@ -13,7 +13,7 @@
         >
           <i class="fa fa-user icon-2x"></i>
         </button>
-        <button class="btn btn-primary mr-2">
+        <button class="btn btn-primary mr-2" (click)="sendLike(user.id)">
           <i class="fa fa-heart icon-2x"></i>
         </button>
         <button class="btn btn-primary">
